@@ -73,25 +73,3 @@
     // Optional
     // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 }; 
-/* ↑ ここに }; を追加してブロックを閉じました */
-
-/* ▼ここから追加設定▼ */
-&glidepoint_listener {
-    status = "okay";
-    
-    /* カーソル速度（1.5倍） */
-    input-processors = <&zip_xy_scaler 150 100>;
-
-    scroller {
-        /* レイヤー指定 */
-        layers = <0 1 2 3 4 5>;
-        
-        /* スクロール処理 */
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            /* スクロール速度（1/8倍＝かなり遅くする設定になっています） */
-            &zip_scroll_scaler 1 16 
-            &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-        >;
-    };
-};
