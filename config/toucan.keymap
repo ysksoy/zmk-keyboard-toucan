@@ -28,7 +28,7 @@
 
         leftclick {
             bindings = <&mkp LCLK>;
-            key-positions = <19 20>;
+            key-positions = <19 18>;
         };
     };
 
