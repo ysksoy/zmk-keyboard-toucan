@@ -111,7 +111,7 @@
         
         /* ▼▼ カーソル速度の設定 ▼▼ */
         /* 例: 150 100 = 1.5倍速 */
-        input-processors = <&zip_xy_scaler 150 100>;
+        input-processors = <&zip_xy_scaler 1 2>;
 
         scroller {
             layers = <1 2 3 4 5>;
@@ -120,7 +120,7 @@
             /* 例: 1 8 = 1/8倍速（かなり遅い） */
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 10 
+                &zip_scroll_scaler 1 40 
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
