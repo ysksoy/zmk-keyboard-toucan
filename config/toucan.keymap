@@ -50,6 +50,21 @@
             bindings = <&kp LG(LS(NUMBER_4))>;
             key-positions = <0 1>;
         };
+
+        controlleft {
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <12 13>;
+        };
+
+        controlcenter {
+            bindings = <&kp LC(UP_ARROW)>;
+            key-positions = <26 27>;
+        };
+
+        controlright {
+            bindings = <&kp LC(RIGHT_ARROW)>;
+            key-positions = <29 28>;
+        };
     };
 
     keymap {
