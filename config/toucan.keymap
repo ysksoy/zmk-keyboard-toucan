@@ -30,6 +30,11 @@
             bindings = <&mkp LCLK>;
             key-positions = <19 18>;
         };
+
+        returninbrows {
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            key-positions = <14 15>;
+        };
     };
 
     keymap {
