@@ -90,7 +90,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             /* スクロール速度（1/8倍＝かなり遅くする設定になっています） */
-            &zip_scroll_scaler 1 8 
+            &zip_scroll_scaler 1 16 
             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         >;
     };
