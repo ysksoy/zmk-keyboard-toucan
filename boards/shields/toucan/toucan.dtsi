@@ -114,13 +114,13 @@
         input-processors = <&zip_xy_scaler 150 100>;
 
         scroller {
-            layers = <0 1 2 3 4 5>;
+            layers = <1 2 3 4 5>;
             
             /* ▼▼ スクロール速度の設定 ▼▼ */
             /* 例: 1 8 = 1/8倍速（かなり遅い） */
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 8 
+                &zip_scroll_scaler 1 10 
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
