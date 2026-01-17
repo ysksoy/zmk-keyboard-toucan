@@ -47,7 +47,7 @@
         };
 
         screenshot_mac {
-            bindings = <&kp LG(LS(NUMBER_4))>;
+            bindings = <&kp LG(LS(LC(NUMBER_4)))>;
             key-positions = <0 1>;
             layers = <0>;
         };
