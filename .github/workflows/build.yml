@@ -80,10 +80,6 @@ jobs:
             ${{ env.base_dir }}/bootloader/
             ${{ env.base_dir }}/zmk/
           key: ${{ runner.os }}-build-${{ env.cache_name }}-${{ hashFiles('**/west.yml', '**/build.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache_name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
 
       - name: West Init
         working-directory: ${{ env.base_dir }}
