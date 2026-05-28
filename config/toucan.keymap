@@ -3,18 +3,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define LAYER_MAC  0
-#define LAYER_WIN  1
-#define LAYER_NAV  2
-#define LAYER_SYM  3
-#define LAYER_ADJ  4
+#define LAYER_MAC      0
+#define LAYER_WIN      1
+#define LAYER_MAC_NAV  2
+#define LAYER_MAC_SYM  3
+#define LAYER_ADJ      4
+#define LAYER_WIN_NAV  5
+#define LAYER_WIN_SYM  6
 
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        tri_layer {
-            if-layers = <LAYER_NAV LAYER_SYM>;
+        mac_tri_layer {
+            if-layers = <LAYER_MAC_NAV LAYER_MAC_SYM>;
+            then-layer = <LAYER_ADJ>;
+        };
+
+        win_tri_layer {
+            if-layers = <LAYER_WIN_NAV LAYER_WIN_SYM>;
             then-layer = <LAYER_ADJ>;
         };
     };
@@ -134,25 +141,25 @@
         base {
             display-name = "BASE";
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LEFT_GUI LS(LANG2)  &mo LAYER_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_SYM  &mt RIGHT_ALT LANG1
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LEFT_GUI LS(LANG2)  &mo LAYER_MAC_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_MAC_SYM  &mt RIGHT_ALT LANG1
             >;
         };
 
         win {
             display-name = "WIN";
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LCTRL LANG2  &mo LAYER_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_SYM  &mt RIGHT_ALT LANG1
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LCTRL LANG2  &mo LAYER_WIN_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_WIN_SYM  &mt RIGHT_ALT LANG1
             >;
         };
 
-        nav {
+        mac_nav {
             display-name = "NAV";
             bindings = <
 &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N1  &kp N2  &kp N3  &kp N0  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp N4  &kp N5  &kp NUMBER_6  &kp RIGHT  &trans  &trans  &kp LSHFT  &studio_unlock  &trans  &trans  &trans  &trans  &kp N7  &kp N8  &kp N9  &trans  &trans  &kp RA(SPACE)  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
-        sym {
+        mac_sym {
             display-name = "SYM";
             bindings = <
 &kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC  &kp LCTRL  &trans  &trans  &kp UP_ARROW  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE  &kp LSHFT  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
@@ -162,7 +169,21 @@
         adj {
             display-name = "ADJ";
             bindings = <
-&mo LAYER_MAC  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans  &trans  &kp BSPC  &kp LCTRL  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &to LAYER_MAC  &to LAYER_WIN  &kp F3  &trans  &kp F10  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &mo LAYER_NAV  &kp SPACE  &kp RET  &mo LAYER_SYM  &kp RALT
+&mo LAYER_MAC  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans  &trans  &kp BSPC  &kp LCTRL  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &to LAYER_MAC  &to LAYER_WIN  &kp F3  &trans  &kp F10  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &mo LAYER_MAC_NAV  &kp SPACE  &kp RET  &mo LAYER_MAC_SYM  &kp RALT
+            >;
+        };
+
+        win_nav {
+            display-name = "WIN_NAV";
+            bindings = <
+&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N1  &kp N2  &kp N3  &kp N0  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp N4  &kp N5  &kp NUMBER_6  &kp RIGHT  &kp SEMI  &kp SQT  &kp LSHFT  &studio_unlock  &kp X  &kp C  &kp V  &kp B  &kp N7  &kp N8  &kp N9  &kp DOT  &kp FSLH  &kp RA(SPACE)  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
+            >;
+        };
+
+        win_sym {
+            display-name = "WIN_SYM";
+            bindings = <
+&kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp UP_ARROW  &kp F  &kp G  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE  &kp LSHFT  &kp Z  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp B  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
             >;
         };
 
