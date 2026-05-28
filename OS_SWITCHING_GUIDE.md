@@ -6,6 +6,9 @@ ADJレイヤーからOS切り替えが可能です。
 
 ## OS切り替え方法
 
+このガイドでは、Layer 0の`BASE`がMacモードです。
+WindowsモードからMac用の`BASE`へ戻す場合も、`to MAC`を押します。
+
 ### Macモードに切り替え
 1. 現在のモードのNAVレイヤーとSYMレイヤーを同時に有効化してADJレイヤーにアクセス
 2. 左下の**Z**キーの位置（ADJレイヤーでは`to MAC`）を押す
@@ -27,6 +30,8 @@ ADJレイヤーからOS切り替えが可能です。
 Windows用のNAV/SYMはMac用のNAV/SYMと完全に分けています。
 Mac用NAV/SYMで`&trans`になっていた位置は、Windows用NAV/SYMではMacモードで実際に出ていたキーを明示的に割り当てています。
 これにより、WindowsモードでNAV/SYMを押しても、Windowsベースレイヤーの違いに引っ張られず、Macモードと同じ形で動作します。
+
+Windows用SYMの記号は、Windowsの日本語キーボード配列でMac用SYMと同じ文字が出るように調整しています。
 
 ## OS別のキーマッピング差異
 
@@ -88,6 +93,7 @@ Mac用NAV/SYMで`&trans`になっていた位置は、Windows用NAV/SYMではMac
 
 ### OS切り替えができない
 - 現在のモードのNAVレイヤーとSYMレイヤーを**同時に**押してADJレイヤーにアクセスできているか確認
+- WindowsモードからBASEへ戻す場合は、WindowsモードのNAV + SYMを押しながら、左下の**Z**キー位置の`to MAC`を押す
 - ファームウェアが最新版に更新されているか確認
 
 ### コンボが動作しない

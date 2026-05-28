@@ -11,6 +11,28 @@
 #define LAYER_WIN_NAV  5
 #define LAYER_WIN_SYM  6
 
+#define WIN_JIS_EXCL   LS(N1)
+#define WIN_JIS_AT     LBKT
+#define WIN_JIS_HASH   LS(N3)
+#define WIN_JIS_DLLR   LS(N4)
+#define WIN_JIS_PRCNT  LS(N5)
+#define WIN_JIS_CARET  EQUAL
+#define WIN_JIS_AMPS   LS(N6)
+#define WIN_JIS_ASTRK  LS(SQT)
+#define WIN_JIS_LPAR   LS(N8)
+#define WIN_JIS_RPAR   LS(N9)
+#define WIN_JIS_EQUAL  LS(MINUS)
+#define WIN_JIS_LBKT   RBKT
+#define WIN_JIS_RBKT   BSLH
+#define WIN_JIS_BSLH   INT3
+#define WIN_JIS_GRAVE  LS(LBKT)
+#define WIN_JIS_UNDER  LS(INT1)
+#define WIN_JIS_PLUS   LS(SEMI)
+#define WIN_JIS_LBRC   LS(RBKT)
+#define WIN_JIS_RBRC   LS(BSLH)
+#define WIN_JIS_PIPE   LS(INT3)
+#define WIN_JIS_TILDE  LS(EQUAL)
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -183,7 +205,7 @@
         win_sym {
             display-name = "WIN_SYM";
             bindings = <
-&kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp UP_ARROW  &kp F  &kp G  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE  &kp LSHFT  &kp Z  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp B  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
+&kp TAB  &kp WIN_JIS_EXCL  &kp WIN_JIS_AT  &kp WIN_JIS_HASH  &kp WIN_JIS_DLLR  &kp WIN_JIS_PRCNT  &kp WIN_JIS_CARET  &kp WIN_JIS_AMPS  &kp WIN_JIS_ASTRK  &kp WIN_JIS_LPAR  &kp WIN_JIS_RPAR  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp UP_ARROW  &kp F  &kp G  &kp MINUS  &kp WIN_JIS_EQUAL  &kp WIN_JIS_LBKT  &kp WIN_JIS_RBKT  &kp WIN_JIS_BSLH  &kp WIN_JIS_GRAVE  &kp LSHFT  &kp Z  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp B  &kp WIN_JIS_UNDER  &kp WIN_JIS_PLUS  &kp WIN_JIS_LBRC  &kp WIN_JIS_RBRC  &kp WIN_JIS_PIPE  &kp WIN_JIS_TILDE  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
             >;
         };
 
