@@ -32,6 +32,7 @@
 #define WIN_JIS_RBRC   LS(BSLH)
 #define WIN_JIS_PIPE   LS(INT3)
 #define WIN_JIS_TILDE  LS(EQUAL)
+#define WIN_JIS_APOS   LS(N7)
 
 / {
     conditional_layers {
@@ -170,7 +171,7 @@
         win {
             display-name = "WIN";
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LCTRL LANG2  &mo LAYER_WIN_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_WIN_SYM  &mt RIGHT_ALT LANG1
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp WIN_JIS_APOS  &kp F13  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE  &mt LCTRL LANG2  &mo LAYER_WIN_NAV  &mt LEFT_SHIFT SPACE  &kp RET  &mo LAYER_WIN_SYM  &mt RIGHT_ALT LANG1
             >;
         };
 
@@ -198,7 +199,7 @@
         win_nav {
             display-name = "WIN_NAV";
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N1  &kp N2  &kp N3  &kp N0  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp N4  &kp N5  &kp NUMBER_6  &kp RIGHT  &kp SEMI  &kp SQT  &kp LSHFT  &studio_unlock  &kp X  &kp C  &kp V  &kp B  &kp N7  &kp N8  &kp N9  &kp DOT  &kp FSLH  &kp RA(SPACE)  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
+&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N1  &kp N2  &kp N3  &kp N0  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp N4  &kp N5  &kp NUMBER_6  &kp RIGHT  &kp SEMI  &kp WIN_JIS_APOS  &kp LSHFT  &studio_unlock  &kp X  &kp C  &kp V  &kp B  &kp N7  &kp N8  &kp N9  &kp DOT  &kp FSLH  &kp RA(SPACE)  &kp LGUI  &mo LAYER_WIN_NAV  &kp SPACE  &kp RET  &mo LAYER_WIN_SYM  &kp RALT
             >;
         };
 
